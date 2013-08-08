@@ -21,15 +21,15 @@ var testFileNames = fs.readdirSync(testsDir);
 var s = '';
 testFileNames.forEach(function (testFileName) {
     if (path.extname(testFileName) === ".js") {
-        var testFilePath = './lib/tests/' + testFileName;
+        var testFilePath = 'lib/tests/' + testFileName;
         component.scripts.push(testFilePath);
-        s += 'require("' + testFilePath + '");\n';
+        s += 'require("./' + testFilePath + '");\n';
     }
 });
 var helperFileNames = fs.readdirSync(path.resolve(testsDir,'helpers'));
 helperFileNames.forEach(function (testFileName) {
     if (path.extname(testFileName) === ".js") {
-        var testFilePath = './lib/tests/helpers/' + testFileName;
+        var testFilePath = 'lib/tests/helpers/' + testFileName;
         component.scripts.push(testFilePath);
     }
 });
