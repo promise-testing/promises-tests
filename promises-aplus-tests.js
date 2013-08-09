@@ -5623,5 +5623,5 @@ require.alias("jamestalmage-sinon/lib/sinon.js", "jamestalmage-sinon/index.js");
 } else if (typeof define == "function" && define.amd) {
   define(function(){ return require("promises-aplus-tests"); });
 } else {
-  this["promises-aplus-tests"] = require("promises-aplus-tests");
+  this["PromisesAplusTests"] = require("promises-aplus-tests");
 }})();

@@ -16,7 +16,8 @@
         "promises-aplus-tests": "lib/cli.js"
     },
     "scripts": {
-        "lint": "jshint lib"
+        "lint": "jshint lib",
+        "browser": "component build -o . -n promises-aplus-tests -s PromisesAplusTests"
     },
     "dependencies": {
         "mocha": "~1.11.0",
