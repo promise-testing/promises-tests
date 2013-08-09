@@ -1,3 +1,4 @@
+;(function(){
 
 /**
  * Require the given path.
@@ -5617,4 +5618,10 @@ require.alias("jamestalmage-sinon/lib/sinon/util/timers_ie.js", "promises-aplus-
 require.alias("jamestalmage-sinon/lib/sinon/util/xhr_ie.js", "promises-aplus-tests/deps/sinon/lib/sinon/util/xhr_ie.js");
 require.alias("jamestalmage-sinon/lib/sinon.js", "promises-aplus-tests/deps/sinon/index.js");
 require.alias("jamestalmage-sinon/lib/sinon.js", "sinon/index.js");
-require.alias("jamestalmage-sinon/lib/sinon.js", "jamestalmage-sinon/index.js");
+require.alias("jamestalmage-sinon/lib/sinon.js", "jamestalmage-sinon/index.js");if (typeof exports == "object") {
+  module.exports = require("promises-aplus-tests");
+} else if (typeof define == "function" && define.amd) {
+  define(function(){ return require("promises-aplus-tests"); });
+} else {
+  this["promises-aplus-tests"] = require("promises-aplus-tests");
+}})();
