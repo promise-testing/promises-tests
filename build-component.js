@@ -18,12 +18,14 @@ var component = {
 
 var testFileNames = fs.readdirSync(testsDir);
 
-var s = '';
+var s = 'module.exports.mocha=function(adapter){\n'
+        + '    window.global=window;\n'
+        + '    window.adapter=adapter;\n';
 testFileNames.forEach(function (testFileName) {
     if (path.extname(testFileName) === ".js") {
         var testFilePath = 'lib/tests/' + testFileName;
         component.scripts.push(testFilePath);
-        s += 'require("./' + testFilePath + '");\n';
+        s += '    require("./' + testFilePath + '");\n';
     }
 });
 var helperFileNames = fs.readdirSync(path.resolve(testsDir,'helpers'));
@@ -33,6 +35,7 @@ helperFileNames.forEach(function (testFileName) {
         component.scripts.push(testFilePath);
     }
 });
+s += '};';
 
 fs.writeFileSync('index.js',s);
 fs.writeFileSync('component.json',JSON.stringify(component,4,4));

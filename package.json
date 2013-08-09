@@ -1,5 +1,5 @@
 {
-    "name": "promises-tests",
+    "name": "promises-aplus-tests",
     "description": "Compliance test suite for Promises/A+",
     "keywords": ["promises", "promises-aplus"],
     "version": "1.3.2",
